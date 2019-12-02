@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>First page for the course on data visualization</title>
+</head>
+<body>
+  <h1> 
+    <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1A1-VL3xQAdxDbZe2C1FcXlh3eBbLOS6RPQVBOL3T410&font=Default&lang=en&initial_zoom=2&height=650' width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
+  </h1>
+</body>
+</html>
