@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+.ventas {
+  fill: red
+}
+.sucursales {
+  fill: blue
+}
+</style>
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Top 10</title>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+</head>
+<body>
+  <div id="uno"></div>
+  <div id="dos"></div>
+
+<script>
+var w50 = [{"rank":1,"chain":"McDonald's","sales_u_s_2017":37500000000,"of_locations_u_s":14036},
+{"rank":2,"chain":"Starbucks","sales_u_s_2017":13200000000,"of_locations_u_s":13930},
+{"rank":3,"chain":"Subway","sales_u_s_2017":10800000000,"of_locations_u_s":25908},
+{"rank":4,"chain":"Burger King","sales_u_s_2017":9800000000,"of_locations_u_s":7226},
+{"rank":5,"chain":"Taco Bell","sales_u_s_2017":9300000000,"of_locations_u_s":6446},
+{"rank":6,"chain":"Wendy's","sales_u_s_2017":9300000000,"of_locations_u_s":5769},
+{"rank":8,"chain":"Chick-fil-A","sales_u_s_2017":9000000000,"of_locations_u_s":2225},
+{"rank":7,"chain":"Dunkin' Donuts","sales_u_s_2017":5900000000,"of_locations_u_s":12538},
+{"rank":9,"chain":"Domino's","sales_u_s_2017":5900000000,"of_locations_u_s":5587},
+{"rank":10,"chain":"Pizza Hut","sales_u_s_2017":5500000000,"of_locations_u_s":7522}];
+/**
+d3.select("div#uno").append("ol").selectAll("li")
+  .data(w50).enter().append("li")
+  .text( function(d,i) {return d.chain;} );
+**/
+var w = 800, h = 800;
+var svg = d3.select("div#dos").append("svg")
+  .attr("width",w)
+  .attr("height",h);
+svg.selectAll("text").data(w50).enter()
+  .append("text")
+    .attr("x", 10)
+    .attr("y", (d,i) => (i+1)*20 )
+    .text(  (d) => d.chain  );
+var ventas =  d3.scaleLinear().domain([0, d3.max(w50, (d)  => d.sales_u_s_2017)]).range([0,100]);
+svg.selectAll("rect.ventas").data(w50).enter()
+  .append("rect")
+    .attr("class","ventas")
+    .attr("x", 120)
+    .attr("y", (d,i) => 3+(i)*20 )
+    .attr("width", (d) => ventas(d.sales_u_s_2017) )
+    .attr("height", 19)
+      .append("title").text( (d) => "U$S " +  d.sales_u_s_2017.toLocaleString() );
+var sucursales =  d3.scaleLinear().domain([0, d3.max(w50, (d) => d.of_locations_u_s )]).range([0,100]);
+svg.selectAll("rect.sucursales").data(w50).enter()
+  .append("rect")
+    .attr("class","sucursales")
+    .attr("x", 230)
+    .attr("y", (d,i) => 3+(i)*20 )
+    .attr("width", (d) => sucursales(d.of_locations_u_s ) )
+    .attr("height", 19)
+      .append("title").text( (d) => d.of_locations_u_s.toLocaleString() + " sucursales"   );
+</script>
+
+</body>
+</html>
