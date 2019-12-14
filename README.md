@@ -6,3 +6,4 @@ The different visualizations examples:
 * Timeline example: https://exemartinez.github.io/infovis/Timeline.html 
 * Union vs Non-Union Salaries in the USA (until 2018): https://exemartinez.github.io/infovis/UnionVsNonUnion.html 
 * Simple D3 example: https://exemartinez.github.io/infovis/d3_simpleBarChart.html
+* USA Fast Food Chain visualizations: https://exemartinez.github.io/infovis/fastFood.html
