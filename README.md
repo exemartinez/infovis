@@ -7,4 +7,4 @@ The different visualizations examples:
 * Union vs Non-Union Salaries in the USA (until 2018): https://exemartinez.github.io/infovis/UnionVsNonUnion.html 
 * Simple D3 example: https://exemartinez.github.io/infovis/d3_simpleBarChart.html
 * USA Fast Food Chain visualizations: https://exemartinez.github.io/infovis/fastFood.html
-* NBA performance of the top teams: https://public.flourish.studio/visualisation/1109876/
+* NBA performance of the top teams (2019): https://public.flourish.studio/visualisation/1109876/
